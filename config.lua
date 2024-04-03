@@ -3,6 +3,7 @@ reload('user.colorscheme')
 reload('user.plugins-options')
 reload('user.keybinds')
 
+vim.loader.enable()
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true

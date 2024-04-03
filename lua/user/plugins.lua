@@ -1,27 +1,19 @@
 lvim.plugins = {
-  { "catppuccin/nvim" },
-  { "rose-pine/neovim" },
-  { "tpope/vim-surround" },
+  { 'catppuccin/nvim' },
+  { 'rose-pine/neovim' },
+  { 'nvim-telescope/telescope-ui-select.nvim' },
+  { 'nvim-pack/nvim-spectre' },
   {
-    "folke/twilight.nvim",
+    'folke/twilight.nvim',
     opts = {}
   },
   {
-    "olimorris/persisted.nvim",
-    lazy = false, -- make sure the plugin is always loaded at startup
-    config = true
+    'folke/zen-mode.nvim',
+    opts = {}
   },
   {
-    "nvim-telescope/telescope-frecency.nvim",
-    config = function()
-      require("telescope").load_extension "frecency"
-    end,
-  },
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup {}
-    end
+    'j-hui/fidget.nvim',
+    opts = {},
   },
   {
     'smoka7/hop.nvim',
@@ -29,18 +21,36 @@ lvim.plugins = {
     opts = {},
   },
   {
-    "j-hui/fidget.nvim",
-    opts = {},
+    'olimorris/persisted.nvim',
+    lazy = false,
+    config = true
   },
   {
-    "folke/todo-comments.nvim",
+    'nvim-telescope/telescope-frecency.nvim',
+    config = function()
+      require("telescope").load_extension "frecency"
+    end,
+  },
+  {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('neoscroll').setup {}
+    end
+  },
+  {
+    'folke/todo-comments.nvim',
     event = "BufRead",
     config = function()
       require("todo-comments").setup()
     end
   },
   {
-    "NvChad/nvim-colorizer.lua",
+    'folke/trouble.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+  {
+    'NvChad/nvim-colorizer.lua',
     event = "VeryLazy", -- https://github.com/NvChad/nvim-colorizer.lua/issues/57
     -- event = { "BufReadPost", "BufNewFile" },
     opts = {
@@ -56,32 +66,12 @@ lvim.plugins = {
   },
   {
     'AckslD/nvim-trevJ.lua',
-    config = 'require("trevj").setup()',
-    init = function()
-      vim.keymap.set('n', '<leader>j', function()
-        require('trevj').format_at_cursor()
-      end)
-    end,
-  },
-  {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
     config = function()
-      require("refactoring").setup()
+      require('trevj').setup()
     end,
   },
   {
-    "saecki/crates.nvim",
-    opts = {},
-    config = function()
-      require('crates').setup()
-    end,
-  },
-  {
-    "AckslD/nvim-neoclip.lua",
+    'AckslD/nvim-neoclip.lua',
     event = "VeryLazy",
     lazy = true,
     dependencies = {
@@ -93,13 +83,6 @@ lvim.plugins = {
       require('neoclip').setup({
         enable_persistent_history = true,
       })
-    end,
-  },
-  {
-    "nvim-pack/nvim-spectre",
-    event = "BufRead",
-    config = function()
-      require("spectre").setup()
     end,
   },
 }
