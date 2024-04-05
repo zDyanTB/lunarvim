@@ -50,6 +50,17 @@ lvim.plugins = {
     opts = {},
   },
   {
+    'AckslD/nvim-trevJ.lua',
+    config = function()
+      require('trevj').setup()
+    end,
+  },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    ft = { 'rust' },
+  },
+  {
     'NvChad/nvim-colorizer.lua',
     event = "VeryLazy", -- https://github.com/NvChad/nvim-colorizer.lua/issues/57
     -- event = { "BufReadPost", "BufNewFile" },
@@ -64,12 +75,7 @@ lvim.plugins = {
       },
     },
   },
-  {
-    'AckslD/nvim-trevJ.lua',
-    config = function()
-      require('trevj').setup()
-    end,
-  },
+
   {
     'AckslD/nvim-neoclip.lua',
     event = "VeryLazy",
