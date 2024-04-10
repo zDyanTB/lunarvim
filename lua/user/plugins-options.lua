@@ -1,7 +1,8 @@
 lvim.leader = "space"
 require('twilight').enable()
 require('persisted').setup()
-require("telescope").load_extension("persisted")
+require('telescope').load_extension('persisted')
+require('colorizer').setup()
 
 -- Hop ---------------------------------
 local hop = require('hop')

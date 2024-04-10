@@ -66,7 +66,7 @@ lvim.plugins = {
     -- event = { "BufReadPost", "BufNewFile" },
     opts = {
       user_default_options = {
-        mode = "virtualtext",
+        mode = "background",
         names = false,
       },
       filetypes = {
