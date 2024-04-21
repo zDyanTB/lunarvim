@@ -4,6 +4,11 @@ lvim.plugins = {
   { 'nvim-telescope/telescope-ui-select.nvim' },
   { 'nvim-pack/nvim-spectre' },
   {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow"
+  },
+  {
     'folke/twilight.nvim',
     opts = {}
   },
@@ -81,7 +86,10 @@ lvim.plugins = {
     event = "VeryLazy",
     lazy = true,
     dependencies = {
-      { 'kkharji/sqlite.lua',           module = 'sqlite' },
+      {
+        'kkharji/sqlite.lua',
+        module = 'sqlite'
+      },
       { 'nvim-telescope/telescope.nvim' },
     },
     config = function()
