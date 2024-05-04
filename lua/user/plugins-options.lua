@@ -5,6 +5,7 @@ require('telescope').load_extension('persisted')
 require('colorizer').setup()
 
 -- Hop ---------------------------------
+-- Hop words
 local hop = require('hop')
 -- local directions = require('hop.hint').HintDirection
 vim.keymap.set('n', 'f', function()
@@ -15,6 +16,7 @@ vim.keymap.set('n', 'F', function()
   hop.hint_patterns({ current_line_only = false })
 end, { remap = true })
 
+-- Hop file
 vim.keymap.set('n', 't', function()
   hop.hint_lines({})
 end, { remap = true })
