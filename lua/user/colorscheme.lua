@@ -1,4 +1,4 @@
-lvim.colorscheme = "rose-pine-main"
+lvim.colorscheme = "catppuccin-mocha"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
