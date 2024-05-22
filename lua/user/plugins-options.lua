@@ -1,8 +1,5 @@
 lvim.leader = "space"
 require('twilight').enable()
-require('persisted').setup()
-require('telescope').load_extension('persisted')
-require('colorizer').setup()
 
 -- Hop ---------------------------------
 -- Hop words
@@ -49,3 +46,6 @@ lvim.builtin.which_key.mappings["r"] = {
 
 -- Zen mode ---------------------------------------------
 lvim.builtin.which_key.mappings["z"] = { ':ZenMode<cr>', 'Zen mode' }
+
+-- SnipRun ----------------------------------------------
+vim.keymap.set('v', 'f', ':SnipRun<cr>', { silent = true })
