@@ -6,7 +6,7 @@ reload('user.LSP')
 
 vim.loader.enable()
 vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.relativenumber = true
 
 -- general
