@@ -2,9 +2,11 @@ lvim.plugins = {
 
   -- Colorschemes -------------------
   { 'catppuccin/nvim' },
-  { "sontungexpt/witch" },
+  { 'sontungexpt/witch' },
   { 'rose-pine/neovim' },
-  { 'nyoom-engineering/oxocarbon.nvim' },
+  { 'olivercederborg/poimandres.nvim' },
+  { 'antonio-hickey/citrus-mist' },
+  { 'diegoulloao/neofusion.nvim' },
 
   -- Plugins ------------------------
   { 'nvim-pack/nvim-spectre' }, -- Find the enemy and replace them with dark power
@@ -42,11 +44,6 @@ lvim.plugins = {
     'folke/trouble.nvim', -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
-  },
-  {
-    'mrcjkb/rustaceanvim', -- Supercharge your Rust experience in Neovim A heavily modified fork of rust-tools.nvim
-    version = '^4',        -- Recommended
-    ft = { 'rust' },
   },
   {
     'dstein64/nvim-scrollview', -- A Neovim plugin that displays interactive vertical scrollbars and signs

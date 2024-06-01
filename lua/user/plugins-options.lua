@@ -4,22 +4,26 @@ require('twilight').enable()
 -- Hop ---------------------------------
 -- Hop words
 local hop = require('hop')
--- local directions = require('hop.hint').HintDirection
-vim.keymap.set('n', 'f', function()
+local directions = require('hop.hint').HintDirection
+
+-- Hop word on file
+vim.keymap.set('', 'f', function()
+  hop.hint_words({ current_line_only = false })
+end, { remap = true })
+
+-- Hop pattern on line
+vim.keymap.set('', 'F', function()
   hop.hint_patterns({ current_line_only = true })
 end, { remap = true })
 
-vim.keymap.set('n', 'F', function()
+-- Hop pattern on file
+vim.keymap.set('', 'T', function()
   hop.hint_patterns({ current_line_only = false })
 end, { remap = true })
 
 -- Hop file
-vim.keymap.set('n', 't', function()
+vim.keymap.set('', 't', function()
   hop.hint_lines({})
-end, { remap = true })
-
-vim.keymap.set('n', 'T', function()
-  hop.hint_anywhere({})
 end, { remap = true })
 
 -- Neoclip -------------------------------------------
