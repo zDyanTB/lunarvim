@@ -5,6 +5,9 @@ require('twilight').enable()
 -- Hop words
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
+vim.keymap.set('v', 'f', function()
+  hop.hint_patterns({ current_line_only = true })
+end, { remap = true })
 
 -- Hop word on file
 vim.keymap.set('', 'f', function()
