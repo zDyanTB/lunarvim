@@ -7,8 +7,10 @@ lvim.plugins = {
   { 'olivercederborg/poimandres.nvim' },
   { 'antonio-hickey/citrus-mist' },
   { 'diegoulloao/neofusion.nvim' },
-
+  
   -- Plugins ------------------------
+  { 'nvim-telescope/telescope-ui-select.nvim' },
+  { "simrat39/rust-tools.nvim" },
   { 'nvim-pack/nvim-spectre' }, -- Find the enemy and replace them with dark power
   { 'nvim-treesitter/nvim-treesitter-textobjects' },
   {
@@ -25,6 +27,7 @@ lvim.plugins = {
   },
   {
     'smoka7/hop.nvim', -- Neovim motions on speed!
+    config = true,
     version = "*",
     opts = {},
   },
@@ -44,27 +47,12 @@ lvim.plugins = {
     'folke/trouble.nvim', -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
+    cmd = "Trouble"
   },
   {
     'dstein64/nvim-scrollview', -- A Neovim plugin that displays interactive vertical scrollbars and signs
-    opts = {
-      diagnostics_severities = { vim.diagnostic.severity.ERROR }
-    },
+    opts = { diagnostics_severities = { vim.diagnostic.severity.ERROR } },
     config = true,
-  },
-  {
-    'nvim-telescope/telescope-ui-select.nvim',
-    config = true,
-    require("telescope").load_extension("ui-select")
-  },
-  {
-    'andweeb/presence.nvim', -- Discord Rich Presence for Neovim
-    config = function()
-      require('presence').setup({
-        auto_update = true,
-        main_image = "file",
-      })
-    end
   },
   {
     'folke/todo-comments.nvim', -- Highlight, list and search todo comments in your projects
@@ -78,10 +66,6 @@ lvim.plugins = {
   },
   {
     'karb94/neoscroll.nvim', -- Smooth scrolling neovim plugin written in lua
-    config = true
-  },
-  {
-    'yorickpeterse/nvim-pqf', -- Prettier quickfix/location list windows for NeoVim
     config = true
   },
   {
@@ -102,6 +86,22 @@ lvim.plugins = {
       require("sniprun").setup({
         -- your options
       })
+    end,
+  },
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        null_ls = {
+          enabled = true,
+          name = "crates.nvim",
+        },
+        popup = {
+          border = "rounded",
+        },
+      }
     end,
   },
   {
@@ -133,7 +133,7 @@ lvim.plugins = {
           },
         },
       })
-    end
+    end,
   },
   {
     'NvChad/nvim-colorizer.lua', -- The fastest Neovim colorizer
@@ -156,23 +156,22 @@ lvim.plugins = {
       },
     },
   },
-  {
-    'AckslD/nvim-neoclip.lua', -- Clipboard manager neovim plugin with telescope integration
-    event = "VeryLazy",
-    lazy = true,
-    dependencies = {
-      {
-        'kkharji/sqlite.lua',
-        module = 'sqlite',
-      },
-      { 'nvim-telescope/telescope.nvim' },
-      { 'ibhagwan/fzf-lua' },
-    },
-    config = function()
-      require('telescope').load_extension('neoclip')
-      require('neoclip').setup({
-        enable_persistent_history = true,
-      })
-    end,
-  },
+  -- {
+  --   'AckslD/nvim-neoclip.lua', -- Clipboard manager neovim plugin with telescope integration
+  --   event = "VeryLazy",
+  --   lazy = true,
+  --   dependencies = {
+  --     {
+  --       'kkharji/sqlite.lua',
+  --       module = 'sqlite',
+  --     },
+  --     { 'nvim-telescope/telescope.nvim' },
+  --     { 'ibhagwan/fzf-lua' },
+  --   },
+  --   config = function()
+  --     require('telescope').load_extension('neoclip')
+  --     require('neoclip').setup({
+  --       enable_persistent_history = true,
+  --   end,
+  -- },
 }

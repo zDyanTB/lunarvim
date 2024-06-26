@@ -1,5 +1,7 @@
 lvim.leader = "space"
 require('twilight').enable()
+require("telescope").setup()
+require("telescope").load_extension("ui-select")
 
 -- Hop ---------------------------------
 -- Hop words
