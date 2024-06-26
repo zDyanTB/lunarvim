@@ -2,7 +2,7 @@ reload('user.plugins')
 reload('user.colorscheme')
 reload('user.plugins-options')
 reload('user.keybinds')
-reload('user.LSP')
+reload('user.rust')
 
 vim.loader.enable()
 vim.opt.shiftwidth = 2
