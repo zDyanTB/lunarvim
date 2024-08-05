@@ -7,9 +7,6 @@ require("telescope").load_extension("ui-select")
 -- Hop words
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
-vim.keymap.set('v', 'f', function()
-  hop.hint_patterns({ current_line_only = true })
-end, { remap = true })
 
 -- Hop word on file
 vim.keymap.set('', 'f', function()
@@ -58,3 +55,6 @@ lvim.builtin.which_key.mappings["z"] = { ':ZenMode<cr>', 'Zen mode' }
 
 -- SnipRun ----------------------------------------------
 vim.keymap.set('v', 'f', ':SnipRun<cr>', { silent = true })
+
+-- Notes ------------------------------------------------
+lvim.builtin.which_key.mappings["n"] = { ":Note<cr>", "Notes" }

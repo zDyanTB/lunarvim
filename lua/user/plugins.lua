@@ -10,7 +10,6 @@ lvim.plugins = {
   
   -- Plugins ------------------------
   { 'nvim-telescope/telescope-ui-select.nvim' },
-  { "simrat39/rust-tools.nvim" },
   { 'nvim-pack/nvim-spectre' }, -- Find the enemy and replace them with dark power
   { 'nvim-treesitter/nvim-treesitter-textobjects' },
   {
@@ -30,6 +29,11 @@ lvim.plugins = {
     config = true,
     version = "*",
     opts = {},
+  },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
   {
     "ellisonleao/glow.nvim", -- A markdown preview directly in your neovim
@@ -110,6 +114,20 @@ lvim.plugins = {
       fps = 60,
       timeout = 3000,
       stages = "slide",
+    }
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
+    cmd = "Markview",
+
+
+    dependencies = {
+        -- You may not need this if you don't lazy load
+        -- Or if the parsers are in your $RUNTIMEPATH
+        "nvim-treesitter/nvim-treesitter",
+
+        "nvim-tree/nvim-web-devicons"
     }
   },
   {
