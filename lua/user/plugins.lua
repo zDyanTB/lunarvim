@@ -7,11 +7,16 @@ lvim.plugins = {
   { 'olivercederborg/poimandres.nvim' },
   { 'antonio-hickey/citrus-mist' },
   { 'diegoulloao/neofusion.nvim' },
-  
+
   -- Plugins ------------------------
   { 'nvim-telescope/telescope-ui-select.nvim' },
   { 'nvim-pack/nvim-spectre' }, -- Find the enemy and replace them with dark power
   { 'nvim-treesitter/nvim-treesitter-textobjects' },
+  {
+    "nvchad/menu",
+    dependencies = { "nvchad/volt" },
+    lazy = true
+  },
   {
     'folke/twilight.nvim', -- Twilight is a Lua plugin for Neovim that dims inactive portions of the code you're editing using TreeSitter
     opts = {}
@@ -25,21 +30,25 @@ lvim.plugins = {
     opts = {},
   },
   {
+    'jake-stewart/multicursor.nvim',
+    branch = "1.0",
+  },
+  {
     'smoka7/hop.nvim', -- Neovim motions on speed!
     config = true,
     version = "*",
     opts = {},
   },
   {
-    'mrcjkb/rustaceanvim',
-    version = '^4', -- Recommended
-    lazy = false, -- This plugin is already lazy
+    "atlj/Pixie.nvim", -- This NeoVim plugin generates ✨fancy✨ images from your code
+    config = function()
+      vim.cmd.PixieInstall()
+    end
   },
   {
-    "ellisonleao/glow.nvim", -- A markdown preview directly in your neovim
-    lazy = true,
-    config = true,
-    cmd = "Glow",
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    lazy = false,   -- This plugin is already lazy
   },
   {
     'nvim-telescope/telescope-frecency.nvim', -- A telescope.nvim extension that offers intelligent prioritization when selecting files from your editing history
@@ -79,19 +88,28 @@ lvim.plugins = {
     config = true
   },
   {
-    "michaelb/sniprun",
-    branch = "master",
-
-    build = "sh install.sh",
-    -- do 'sh install.sh 1' if you want to force compile locally
-    -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
-
-    config = function()
-      require("sniprun").setup({
-        -- your options
-      })
-    end,
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
+    cmd = "Markview",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    }
   },
+  -- {
+  --   "michaelb/sniprun",
+  --   branch = "master",
+
+  --   build = "sh install.sh",
+  --   -- do 'sh install.sh 1' if you want to force compile locally
+  --   -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
+
+  --   config = function()
+  --     require("sniprun").setup({
+  --       -- your options
+  --     })
+  --   end,
+  -- },
   {
     "saecki/crates.nvim",
     tag = "stable",
@@ -114,20 +132,6 @@ lvim.plugins = {
       fps = 60,
       timeout = 3000,
       stages = "slide",
-    }
-  },
-  {
-    "OXY2DEV/markview.nvim",
-    ft = "markdown",
-    cmd = "Markview",
-
-
-    dependencies = {
-        -- You may not need this if you don't lazy load
-        -- Or if the parsers are in your $RUNTIMEPATH
-        "nvim-treesitter/nvim-treesitter",
-
-        "nvim-tree/nvim-web-devicons"
     }
   },
   {
